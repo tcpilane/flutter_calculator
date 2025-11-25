@@ -19,18 +19,32 @@ class _MyAppState extends State<MyApp> {
     _counter++;
   });
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Calculator',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const Scaffold(
+      home: Scaffold(
         body: Center(
-          child: Text('Calculator App Home'),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget> [
+              const Text('You have pushed the button this many times:'),
+              // Text showing the counter value 
+              Text(
+                _counter.toString(),
+                style: TextStyle(fontSize: 40),
+              ),
+              // Button to increment the counter
+              ElevatedButton(onPressed:(){
+                 // When pressed, call the method that updates the state
+                _incrementCounter();
+              },
+              child: const Text('Increment Counter'),
+              )
+            ],
+          ),
         ),
       ),
     );
