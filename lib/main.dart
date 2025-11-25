@@ -13,6 +13,13 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  int _counter = 0;
+  void _incrementCounter() {
+  setState(() {
+    _counter++;
+  });
+  }
+  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
